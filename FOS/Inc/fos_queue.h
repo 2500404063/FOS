@@ -7,8 +7,6 @@ typedef struct _fos_queue_node {
 	struct _fos_queue_node *nextNode;
 } FOS_QueueNode;
 
-#include "fos_queue.h"
-
 void FOS_QueueNodeInit(FOS_QueueNode *node, void *val);
 void FOS_QueueAddNext(FOS_QueueNode *parent_node, FOS_QueueNode *node);
 void FOS_QueueAddPre(FOS_QueueNode *parent_node, FOS_QueueNode *node);

@@ -30,8 +30,9 @@ void Task0(void *parameter) {
 }
 
 void Task1(void *parameter) {
-	uint8_t data = 0x05;
+	uint8_t data = 0x50;
 	while (1) {
+		data = data - 5;
 		FOS_MutexLock(&mutex);
 		HAL_UART_Transmit(&huart1, &data, 1, 1000);
 		FOS_TaskDelay(0, 100 * TIME_MS);
@@ -40,8 +41,9 @@ void Task1(void *parameter) {
 }
 
 void Task2(void *parameter) {
-	uint8_t data = 0x15;
+	uint8_t data = 0x0;
 	while (1) {
+		data = data - 5;
 		FOS_MutexLock(&mutex);
 		HAL_UART_Transmit(&huart1, &data, 1, 1000);
 		FOS_TaskDelay(0, 100 * TIME_MS);
